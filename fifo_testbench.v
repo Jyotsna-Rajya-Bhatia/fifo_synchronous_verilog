@@ -22,7 +22,7 @@
 
 module fifo_testbench;
 parameter depth=8, width=16;
-    reg rst;          //we gave active low rst
+    reg rst;          //gave active low rst
     reg clk;
     reg wr_en;
     reg rd_en;
