@@ -1,1 +1,1 @@
-# fifo_synchronous_verilog
+ Verilog implementation of synchronous FIFO buffer with parameterized depth and width. Circular buffer implementation using read and write pointers and a single clock domain.  Avoids overflow and underflow conditions using full and empty flags using internal counter. 
