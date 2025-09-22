@@ -50,24 +50,23 @@ parameter depth=8, width=16;
     rst = 1'b1;     //normal operation
     //write
     repeat (2) begin
-    @(posedge clk);
-    wr_en = 1;
-    rd_en = 0;
-    din = $random;
-    end
-    //stop writing
+   @(posedge clk);
+   wr_en = 1;
+   din = $random;
+   @(posedge clk);
+   wr_en = 0;
+   end
     
-    @ (posedge clk);
-    wr_en = 0;
-    
-    //reading
-    repeat (2) begin
-    @ (posedge clk)
-    rd_en=1;
-    end
+   //reading
+   repeat (2) begin
+   @(posedge clk);
+   rd_en = 1;    
+   @(posedge clk);
+   rd_en = 0;   
+   end
     
     //full condition
-    rd_en = 0;
+    
     repeat (depth) begin
     @ (posedge clk);
     wr_en=1;
